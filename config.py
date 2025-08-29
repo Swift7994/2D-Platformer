@@ -11,3 +11,7 @@ colors = {
 
 player_speed = 300  # pixels per second
 player_size = (40, 60)  # width, height
+player_color = colors["BLUE"]
+jump_speed = 500  # pixels per second
+
+gravity = 1500  # pixels per second squared

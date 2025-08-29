@@ -20,6 +20,8 @@ def main():
     # Create player
     player = Player(100, screen_height - 100)
 
+    print(f"debug: {drawable.sprites()}")
+
     running = True
     while running:
         # checks if the user tries to exit the window

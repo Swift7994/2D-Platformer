@@ -2,7 +2,10 @@ import pygame
 
 class Rectangle(pygame.sprite.Sprite):
     def __init__(self, x, y, size, color):
-        super().__init__()
+        if hasattr(self, "containers"):
+            super().__init__(self.containers)
+        else:
+            super().__init__()
         if isinstance(size, tuple):  # (width, height)
             width, height = size
         else:  # square
