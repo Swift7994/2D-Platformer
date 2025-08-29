@@ -1,3 +1,4 @@
+## Screen Settings
 screen_width = 800
 screen_height = 600
 fps = 60
@@ -9,9 +10,11 @@ colors = {
     "BLUE": (0, 0, 255),
 }
 
+## Physics Settings
+gravity = 1500  # pixels per second squared
+
+## Player Settings
 player_speed = 300  # pixels per second
 player_size = (40, 60)  # width, height
 player_color = colors["BLUE"]
-jump_speed = 500  # pixels per second
-
-gravity = 1500  # pixels per second squared
+player_jump_speed = 500  # pixels per second

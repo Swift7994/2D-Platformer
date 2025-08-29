@@ -1,20 +1,17 @@
 import pygame
-from rectangle import Rectangle
-from config import player_speed, player_size, player_color, jump_speed
+from physicsobject import PhysicsObject
+from config import player_speed, player_size, player_color, player_jump_speed
 
-class Player(Rectangle):
+class Player(PhysicsObject):
     def __init__(self, x, y):
         super().__init__(x, y, player_size, player_color)
-        self.speed = player_speed
-        self.jump_speed = jump_speed
-        self.vel_y = 0
         self.on_ground = False
 
     def move(self, dt, direction):
-        self.rect.x += self.speed * dt * direction
+        self.rect.x += player_speed * dt * direction
 
     def jump(self):
-        self.vel_y = self.jump_speed
+        self.vel_y -= player_jump_speed
         self.on_ground = False
 
     def update(self, dt):
@@ -27,5 +24,7 @@ class Player(Rectangle):
 
         if keys[pygame.K_SPACE] and self.on_ground:
             self.jump()
-        # apply gravity
+
+        self.apply_gravity(dt)
+        self.check_floor_collision()
 
