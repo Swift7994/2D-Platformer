@@ -1,10 +1,10 @@
 import pygame
-from physicsobject import PhysicsObject
+from physicsobject import RectangleObject
 from config import player_speed, player_size, player_color, player_jump_speed
 
-class Player(PhysicsObject):
-    def __init__(self, x, y):
-        super().__init__(x, y, player_size, player_color)
+class Player(RectangleObject):
+    def __init__(self, x, y, size=player_size, color=player_color):
+        super().__init__(x, y, size, color)
         self.on_ground = False
 
     def move(self, dt, direction):

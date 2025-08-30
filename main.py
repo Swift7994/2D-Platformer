@@ -18,9 +18,7 @@ def main():
     Player.containers = (updatable, drawable) # Adds all instances of the Player class to both groups
 
     # Create player
-    player = Player(100, screen_height - 100)
-
-    print(f"debug: {drawable.sprites()}")
+    Player(100, screen_height - 100)
 
     running = True
     while running:
