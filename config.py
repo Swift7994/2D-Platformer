@@ -1,6 +1,6 @@
 ## Screen Settings
-screen_width = 800
-screen_height = 600
+screen_width = 1200
+screen_height = 900
 fps = 60
 colors = {
     "BLACK": (0, 0, 0),
@@ -17,4 +17,4 @@ gravity = 1500  # pixels per second squared
 player_speed = 300  # pixels per second
 player_size = (40, 60)  # width, height
 player_color = colors["BLUE"]
-player_jump_speed = 500  # pixels per second
+player_jump_speed = 650  # pixels per second

@@ -26,5 +26,12 @@ class Player(RectangleObject):
             self.jump()
 
         self.apply_gravity(dt)
-        self.check_floor_collision()
 
+    def check_platform_collision(self, platforms):
+        self.on_ground = False
+        for platform in platforms:
+            if self.rect.colliderect(platform.rect):
+                if self.vel_y >= 0 and self.rect.bottom <= platform.rect.bottom:
+                    self.rect.bottom = platform.rect.top
+                    self.vel_y = 0
+                    self.on_ground = True
